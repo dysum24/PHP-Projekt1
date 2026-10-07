@@ -1,5 +1,7 @@
 # Planung
 
+// http://localhost/Projekt1/PHP-Projekt1/
+
 ## Idee
 - abo manager, alle abos an einem ort
 - kosten pro monat / jahr sehen
