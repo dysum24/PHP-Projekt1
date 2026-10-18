@@ -1,27 +1,117 @@
-body {
-    font-family: Arial, sans-serif;
+body
+{
     margin: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #2b4c7e;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: black;
     color: white;
-    padding: 10px 20px;
 }
 
-nav a {
-    color: white;
-    margin-right: 15px;
-    text-decoration: none;
+.grid-container
+{
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 100vh;
 }
 
-main {
-    padding: 20px;
+.seitenleiste
+{
+    border-right: 1px solid #222;
 }
 
-footer {
-    text-align: center;
-    color: #777777;
+.logo
+{
+    height: 60px;
+    padding-left: 20px;
+}
+
+.logo img
+{
+    height: 36px;
+    margin-top: 12px;
+}
+
+.menue
+{
     padding: 10px;
+}
+
+.button
+{
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.button:hover
+{
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.oben
+{
+    height: 60px;
+    line-height: 60px;
+    padding-right: 20px;
+    text-align: right;
+    border-bottom: 1px solid #222;
+}
+
+.knopf-weiss
+{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.knopf-rand
+{
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.inhalt
+{
+    padding: 40px;
+}
+
+.inhalt h1
+{
+    font-size: 40px;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+}
+
+.grau
+{
+    color: #888;
+}
+
+.button img
+{
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 10px;
+    opacity: 0.6;
+}
+
+.button:hover img
+{
+    opacity: 1;
 }
