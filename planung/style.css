@@ -3,49 +3,115 @@ body
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
+    background-color: black;
+    color: white;
 }
 
-.grid-container {
+.grid-container
+{
     display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: 60px 1fr;
+    grid-template-columns: 220px 1fr;
     min-height: 100vh;
 }
 
 .seitenleiste
 {
-    background-color: black;
-    color: white;
-    width: 150px;
+    border-right: 1px solid #222;
 }
 
 .logo
 {
-    padding: 20px;
-    margin-bottom: 60pt;
+    height: 60px;
+    padding-left: 20px;
+}
+
+.logo img
+{
+    height: 36px;
+    margin-top: 12px;
+}
+
+.menue
+{
+    padding: 10px;
 }
 
 .button
 {
     display: block;
-    height: 35pt;
-    padding: 12px 2px;
-    margin: 20pt;
-    background-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.6);;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif, ui-sans-serif, system-ui, sans-serif;
-    font-size: 16;
+    font-size: 16px;
+    border-radius: 20px;
 }
 
 .button:hover
 {
-    background-color: #222;
+    background-color: #1a1a1a;
+    color: white;
 }
 
-.oben {
-    grid-column: 1 / 3;
-    background-color: black;
+.oben
+{
+    height: 60px;
+    line-height: 60px;
+    padding-right: 20px;
+    text-align: right;
+    border-bottom: 1px solid #222;
+}
+
+.knopf-weiss
+{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.knopf-rand
+{
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #333;
     color: white;
-    height: 65pt;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.inhalt
+{
+    padding: 40px;
+}
+
+.inhalt h1
+{
+    font-size: 40px;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+}
+
+.grau
+{
+    color: #888;
+}
+
+.button img
+{
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 10px;
+    opacity: 0.6;
+}
+
+.button:hover img
+{
+    opacity: 1;
 }
