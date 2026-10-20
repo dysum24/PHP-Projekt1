@@ -115,3 +115,104 @@ body
 {
     opacity: 1;
 }
+
+.feld
+{
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 20px;
+    font-family: inherit;
+}
+
+button
+{
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+table
+{
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+td
+{
+    padding: 10px 15px;
+    border-bottom: 1px solid #222;
+}
+
+td a
+{
+    color: #888;
+}
+
+.punkt
+{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+}
+
+.meldung
+{
+    padding: 10px 15px;
+    border: 1px solid #a33;
+    border-radius: 10px;
+    color: #f88;
+}
+
+th
+{
+    padding: 10px 15px;
+    text-align: left;
+    font-weight: normal;
+    color: #888;
+    border-bottom: 1px solid #333;
+}
+
+td a
+{
+    margin-right: 10px;
+}
+
+.formular
+{
+    max-width: 400px;
+}
+
+.formular label
+{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #888;
+    font-size: 14px;
+}
+
+.formular .feld
+{
+    width: 100%;
+    box-sizing: border-box;
+    color-scheme: dark;
+}
+
+textarea.feld
+{
+    height: 80px;
+    border-radius: 12px;
+}
+
+.knoepfe
+{
+    margin-top: 25px;
+}
+
+.meldung p
+{
+    margin: 5px 0;
+}
