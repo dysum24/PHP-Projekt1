@@ -78,9 +78,9 @@ body
 .knopf-rand
 {
     display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid #333;
-    color: white;
+    padding: 10px 25px;
+    border: 15px transparent #fcfcfc;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 14px;
     border-radius: 20px;
@@ -215,4 +215,69 @@ textarea.feld
 .meldung p
 {
     margin: 5px 0;
+}
+
+.karten
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.karte
+{
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 12px;
+}
+
+.zahl
+{
+    font-size: 28px;
+    margin-top: 5px;
+}
+
+.hinweis
+{
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #a80;
+    border-radius: 10px;
+    color: #fc6;
+}
+
+.hinweis p
+{
+    margin: 5px 0;
+}
+
+.box
+{
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 12px;
+}
+
+.box table
+{
+    margin-top: 0;
+    width: 100%;
+}
+
+.balken
+{
+    display: inline-block;
+    width: 120px;
+    height: 8px;
+    margin-right: 8px;
+    vertical-align: middle;
+    background-color: #222;
+    border-radius: 4px;
+}
+
+.balken-fuellung
+{
+    height: 8px;
+    border-radius: 4px;
 }

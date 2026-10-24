@@ -36,32 +36,69 @@ if (isset($_GET['loeschen'])) {
     }
 }
 
-// alle kategorien holen
-$kategorien = $pdo->query("SELECT * FROM kategorien ORDER BY name");
+// alle kategorien mit der anzahl ihrer abos
+$kategorien = $pdo->query("SELECT kategorien.*, COUNT(abos.id) AS anzahl
+                           FROM kategorien
+                           LEFT JOIN abos ON abos.kategorie_id = kategorien.id
+                           GROUP BY kategorien.id
+                           ORDER BY kategorien.name")->fetchAll();
 
+$seite = "kategorien";
 include 'kopf.php';
 ?>
 
 <h1>Kategorien</h1>
+<p class="grau">Ordne deine Abos in Kategorien ein.</p>
 
 <?php if ($meldung != "") { ?>
     <p class="meldung"><?php echo $meldung; ?></p>
 <?php } ?>
 
-<form method="post" action="kategorien.php">
-    <input class="feld" type="text" name="name" placeholder="Name der Kategorie">
-    <input type="color" name="farbe" value="#888888">
-    <button class="knopf-weiss" type="submit">Anlegen</button>
-</form>
+<div class="zwei-spalten">
+    <div class="box">
+        <h3>Neue Kategorie</h3>
+        <form class="formular" method="post" action="kategorien.php">
+            <label>Name</label>
+            <input class="feld" type="text" name="name" maxlength="50" placeholder="z. B. Streaming">
 
-<table>
-    <?php foreach ($kategorien as $kategorie) { ?>
-        <tr>
-            <td><span class="punkt" style="background-color: <?php echo $kategorie['farbe']; ?>"></span></td>
-            <td><?php echo htmlspecialchars($kategorie['name']); ?></td>
-            <td><a href="kategorien.php?loeschen=<?php echo $kategorie['id']; ?>">Löschen</a></td>
-        </tr>
-    <?php } ?>
-</table>
+            <label>Farbe</label>
+            <input type="color" name="farbe" value="#888888">
+
+            <div class="knoepfe">
+                <button class="knopf-weiss" type="submit">Anlegen</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="box">
+        <?php if (count($kategorien) == 0) { ?>
+            <p class="grau">Noch keine Kategorien vorhanden.</p>
+        <?php } else { ?>
+            <table>
+                <tr>
+                    <th>Kategorie</th>
+                    <th>Abos</th>
+                    <th></th>
+                </tr>
+                <?php foreach ($kategorien as $kategorie) { ?>
+                    <tr>
+                        <td>
+                            <span class="punkt" style="background-color: <?php echo htmlspecialchars($kategorie['farbe']); ?>"></span>
+                            <?php echo htmlspecialchars($kategorie['name']); ?>
+                        </td>
+                        <td><?php echo $kategorie['anzahl']; ?></td>
+                        <td>
+                            <?php if ($kategorie['anzahl'] == 0) { ?>
+                                <a href="kategorien.php?loeschen=<?php echo $kategorie['id']; ?>" onclick="return confirm('Kategorie wirklich löschen?');">Löschen</a>
+                            <?php } else { ?>
+                                <span class="grau">in Benutzung</span>
+                            <?php } ?>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </table>
+        <?php } ?>
+    </div>
+</div>
 
 <?php include 'fuss.php'; ?>

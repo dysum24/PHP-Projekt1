@@ -1,3 +1,9 @@
+<?php
+// welche seite gerade offen ist, damit der button markiert wird
+if (!isset($seite)) {
+    $seite = "";
+}
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -14,10 +20,9 @@
             </div>
 
             <div class="menue">
-                <a class="button" href="index.php"><img src="bilder/icon_uebersicht.png" alt="">Übersicht</a>
-                <a class="button" href="abo_bearbeiten.php"><img src="bilder/icon_neues_abo.png" alt="">Neues Abo</a>
-                <a class="button" href="kategorien.php"><img src="bilder/icon_kategorien.png" alt="">Kategorien</a>
-                <a class="button" href="auswertung.php"><img src="bilder/icon_auswertung.png" alt="">Auswertung</a>
+                <a class="button <?php if ($seite == "uebersicht") { echo "aktiv"; } ?>" href="index.php"><img src="bilder/icon_uebersicht.png" alt="">Übersicht</a>
+                <a class="button <?php if ($seite == "kategorien") { echo "aktiv"; } ?>" href="kategorien.php"><img src="bilder/icon_kategorien.png" alt="">Kategorien</a>
+                <a class="button <?php if ($seite == "auswertung") { echo "aktiv"; } ?>" href="auswertung.php"><img src="bilder/icon_auswertung.png" alt="">Auswertung</a>
             </div>
         </div>
 
