@@ -16,13 +16,14 @@ if (!isset($seite)) {
     <div class="grid-container">
         <div class="seitenleiste">
             <div class="logo">
-                <img src="bilder/logo.png" alt="Abo-Manager">
+                <img src="bilder/logo2.png" alt="Abo-Manager">
             </div>
 
             <div class="menue">
                 <a class="button <?php if ($seite == "uebersicht") { echo "aktiv"; } ?>" href="index.php"><img src="bilder/icon_uebersicht.png" alt="">Übersicht</a>
                 <a class="button <?php if ($seite == "kategorien") { echo "aktiv"; } ?>" href="kategorien.php"><img src="bilder/icon_kategorien.png" alt="">Kategorien</a>
                 <a class="button <?php if ($seite == "auswertung") { echo "aktiv"; } ?>" href="auswertung.php"><img src="bilder/icon_auswertung.png" alt="">Auswertung</a>
+                
             </div>
         </div>
 
