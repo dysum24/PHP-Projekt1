@@ -57,6 +57,9 @@ if (isset($_POST['name'])) {
     if (!is_numeric($abo['preis']) || $abo['preis'] <= 0) {
         $fehler[] = "Bitte einen gültigen Preis eingeben.";
     }
+    if ($abo['preis'] > 999999) {
+        $fehler[] = "Der Preis ist zu hoch.";
+    }
     if ($abo['intervall'] != "monatlich" && $abo['intervall'] != "jährlich") {
         $fehler[] = "Bitte ein Intervall wählen.";
     }
@@ -91,3 +94,64 @@ include 'kopf.php';
 ?>
 
 <h1>
+    <?php
+    if ($abo['id'] == "") {
+        echo "Neues Abo";
+    } else {
+        echo "Abo bearbeiten";
+    }
+    ?>
+</h1>
+
+<?php if (count($fehler) > 0) { ?>
+    <div class="meldung">
+        <?php foreach ($fehler as $text) { ?>
+            <p><?php echo $text; ?></p>
+        <?php } ?>
+    </div>
+<?php } ?>
+
+<form class="formular" method="post" action="abo_bearbeiten.php">
+    <input type="hidden" name="id" value="<?php echo $abo['id']; ?>">
+
+    <label>Name</label>
+    <input class="feld" type="text" name="name" maxlength="100" value="<?php echo htmlspecialchars($abo['name']); ?>">
+
+    <label>Anbieter</label>
+    <input class="feld" type="text" name="anbieter" maxlength="100" value="<?php echo htmlspecialchars($abo['anbieter']); ?>">
+
+    <label>Kategorie</label>
+    <select class="feld" name="kategorie_id">
+        <option value="">Bitte wählen</option>
+        <?php foreach ($kategorien as $kategorie) { ?>
+            <option value="<?php echo $kategorie['id']; ?>" <?php if ($kategorie['id'] == $abo['kategorie_id']) { echo "selected"; } ?>>
+                <?php echo htmlspecialchars($kategorie['name']); ?>
+            </option>
+        <?php } ?>
+    </select>
+
+    <label>Preis in €</label>
+    <input class="feld" type="number" name="preis" step="0.01" min="0" value="<?php echo $abo['preis']; ?>">
+
+    <label>Intervall</label>
+    <select class="feld" name="intervall">
+        <option value="monatlich" <?php if ($abo['intervall'] == "monatlich") { echo "selected"; } ?>>monatlich</option>
+        <option value="jährlich" <?php if ($abo['intervall'] == "jährlich") { echo "selected"; } ?>>jährlich</option>
+    </select>
+
+    <label>Startdatum</label>
+    <input class="feld" type="date" name="startdatum" value="<?php echo $abo['startdatum']; ?>">
+
+    <label>Kündigung bis</label>
+    <input class="feld" type="date" name="kuendigungsfrist" value="<?php echo $abo['kuendigungsfrist']; ?>">
+
+    <label>Notiz</label>
+    <textarea class="feld" name="notiz"><?php echo htmlspecialchars($abo['notiz']); ?></textarea>
+
+    <div class="knoepfe">
+        <button class="knopf-weiss" type="submit">Speichern</button>
+        <a class="knopf-rand" href="index.php">Abbrechen</a>
+    </div>
+</form>
+
+<?php include 'fuss.php'; ?>

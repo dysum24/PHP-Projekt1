@@ -38,6 +38,7 @@ $hinweise = $pdo->query("SELECT name, kuendigungsfrist FROM abos
                          WHERE kuendigungsfrist BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 30 DAY)
                          ORDER BY kuendigungsfrist")->fetchAll();
 
+$seite = "uebersicht";
 include 'kopf.php';
 ?>
 

@@ -25,20 +25,22 @@ Mit dem Abo-Manager lassen sich alle laufenden Abonnements an einem Ort verwalte
 
 ## Dateien
 
-- index.php: Übersicht aller Abos
-- abo_formular.php: Abo anlegen und bearbeiten
+- index.php: Übersicht aller Abos mit Filter, Kosten und Hinweisen
+- abo_bearbeiten.php: Abo anlegen und bearbeiten
 - abo_loeschen.php: Abo löschen
 - kategorien.php: Kategorien anlegen und löschen
-- kosten.php: Kostenübersicht
-- db.php: Verbindung zur Datenbank
-- header.php und footer.php: Seitenkopf mit Navigation und Seitenfuß
+- auswertung.php: Kosten je Kategorie
+- verbindung.php: Verbindung zur Datenbank
+- funktionen.php: Funktionen für Monatskosten und Eurobeträge
+- kopf.php und fuss.php: Seitenkopf mit Navigation und Seitenfuß
 - style.css: Gestaltung
-- datenbank.sql: Export der Datenbank
-- docs: Projektantrag und Planung
+- bilder: Logo und Icons
+- abo_manager.sql: Export der Datenbank
+- planung: Projektantrag und Planung
 
 ## Installation
 
 1. XAMPP starten (Apache und MySQL).
 2. Den Ordner PHP-Projekt1 in den Ordner htdocs von XAMPP kopieren.
-3. In phpMyAdmin die Datenbank abo_manager anlegen und die Datei datenbank.sql importieren.
+3. In phpMyAdmin die Datenbank abo_manager anlegen und die Datei abo_manager.sql importieren.
 4. Im Browser http://localhost/PHP-Projekt1 öffnen.

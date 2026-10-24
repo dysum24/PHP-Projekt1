@@ -24,6 +24,7 @@ foreach ($abos as $abo) {
     $kategorien[$name]['anzahl'] = $kategorien[$name]['anzahl'] + 1;
 }
 
+$seite = "auswertung";
 include 'kopf.php';
 ?>
 
