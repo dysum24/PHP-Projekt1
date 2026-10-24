@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Erstellungszeit: 07. Okt 2026 um 11:10
+-- Erstellungszeit: 24. Okt 2026 um 13:27
 -- Server-Version: 10.4.28-MariaDB
 -- PHP-Version: 8.2.4
 
@@ -38,6 +38,18 @@ CREATE TABLE `abos` (
   `kuendigungsfrist` date DEFAULT NULL,
   `notiz` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Daten für Tabelle `abos`
+--
+
+INSERT INTO `abos` (`id`, `kategorie_id`, `name`, `anbieter`, `preis`, `intervall`, `startdatum`, `kuendigungsfrist`, `notiz`) VALUES
+(2, 1, 'Spotify Premium', 'Spotify', 10.99, 'monatlich', '2024-06-01', '2026-11-30', NULL),
+(3, 1, 'Disney+', 'Disney', 89.90, 'jährlich', '2025-01-15', '2027-01-14', NULL),
+(4, 2, 'Fitnessstudio', 'McFit', 24.90, 'monatlich', '2025-09-01', '2026-11-05', NULL),
+(5, 3, 'Microsoft 365', 'Microsoft', 99.00, 'jährlich', '2025-03-10', '2027-02-10', NULL),
+(6, 3, 'iCloud+', 'Apple', 2.99, 'monatlich', '2023-11-01', NULL, NULL),
+(7, 2, 'test', 'test2', 10.00, 'monatlich', '2026-10-25', '2026-11-29', '');
 
 -- --------------------------------------------------------
 
@@ -85,13 +97,13 @@ ALTER TABLE `kategorien`
 -- AUTO_INCREMENT für Tabelle `abos`
 --
 ALTER TABLE `abos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT für Tabelle `kategorien`
 --
 ALTER TABLE `kategorien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints der exportierten Tabellen
